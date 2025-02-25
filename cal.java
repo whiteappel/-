@@ -3,7 +3,7 @@ import java.util.Scanner;//scanner호출
 public class Cal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        while(true) {
+        while (true) {
             System.out.println("첫번째 숫자를 입력하시오: ");
             int first = sc.nextInt();
             System.out.println("두번째 숫자를 입력하시오: ");
@@ -12,27 +12,18 @@ public class Cal {
             char third = sc.next().charAt(0);
             int sum = 0;
 
-            if (third== "+" ) {
+            if (third == '+') {
                 sum = first + second;
-            }
-
-            else - if (third== "-") {
+            } else if (third == '-') {
                 sum = first - second;
-            }
-
-            else - if (third == /) {
-                if(first == 0 || second == 0) {
+            } else if (third == '/') {
+                if (first == 0 || second == 0) {
                     System.out.println("계산이 불가능합니다");
-                }
-                else {
+                    sum = 0;
+                } else {
                     sum = first / second;
                 }
-            }
-            else - if (third== *) {
-                if(first == 0 || second == 0) {
-                    sum = 0;
-                }
-            }
+            } else if (third == '*') {
                 sum = first * second;
             }
             System.out.println("결과: " + sum);
@@ -42,8 +33,9 @@ public class Cal {
             if (input.equals("exit")) {
                 System.out.println("계산기를 종료합니다.");
                 break;
+            }
+            //whlie끝남
+            sc.close();
         }
-        //whlie끝남
-        sc.close();
     }
 }

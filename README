@@ -1,0 +1,68 @@
+계산기 과제
+
+프로젝트 소개
+
+Java의 제너릭 과 Enum , Lambda 를 활용하여 사칙연산을 수행하는 계산기 프로그램입니다.
+
+ 기능
+
+제너릭을 활용하여 다양한 숫자 타입(Integer, Double 등) 지원
+
+Enum + 람다 표현식으로 사칙연산 구현
+
+잘못된 입력(연산자 오류, 0 나누기 등)에 대한 예외 처리
+
+기술 스택
+
+Java 17
+
+객체지향 프로그래밍
+
+제너릭
+
+람다 표현식
+
+Enum 활용
+
+lv3기준
+
+Main 클래스
+
+사용자 입력을 받아 두 개의 숫자와 연산자를 입력받음
+
+Cal<T> 클래스를 활용하여 연산 수행
+
+exit 입력 시 프로그램 종료
+
+️ Cal<T> 제너릭 클래스
+
+다양한 숫자 타입을 지원하기 위해 T extends Number 사용
+
+calculate 메서드에서 Operation Enum을 활용하여 연산 수행
+
+️ Operation Enum
+
+BiFunction<Double, Double, Double>을 사용하여 연산을 람다식으로 구현
+
+valueOf(operator.toUpperCase())로 문자열을 Enum 타입으로 변환
+
+DIVIDE의 경우, 0으로 나눌 때 NaN 처리
+
+실행방법
+
+# 프로젝트 클론
+git clone https://github.com/whiteappel/-
+
+# 프로젝트 폴더로 이동
+cd -
+//생각해보니 특수기호니까 다음에는 이런식으로 하면안됨
+# Java 파일 컴파일 및 실행
+javac lv3/Main.java
+java lv3.Main
+
+
+예외 처리
+
+잘못된 연산자 입력 → "잘못된 연산자입니다." 메시지 출력 후 재입력 요청
+
+0으로 나누기 → NaN 반환하여 에러 방지
